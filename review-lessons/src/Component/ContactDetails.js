@@ -2,25 +2,28 @@ import React from "react";
 
 class ContactDetails extends React.Component{
     render(){
-        const data = (
+        console.log(this.props.contacts)
+        const selectList = (
             <div>
-                <p>{this.props.contact.name}</p>
-                <p>{this.props.contact.phone}</p>
+                <p>{this.props.contacts.name}</p>
+                <p>{this.props.contacts.phone}</p>
             </div>
         )
-        const blank =(<div>선택된 데이터가 없습니다.</div>)
+        const blank = (<div>아무것도 선택안되엇다 빠끄</div>)
         return(
             <div>
-                <h2>Details</h2>
-                {this.props.isSelcted ? data : blank}
+            <h1>Details</h1>
+                {this.props.isSelectd ? selectList : blank}
             </div>
         )
     }
 }
+
 ContactDetails.defaultProps = {
-    contact: {
+    contacts:{
         name:'',
         phone:''
     }
 }
+
 export default ContactDetails

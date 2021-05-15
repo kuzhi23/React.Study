@@ -40,6 +40,9 @@ class Contact extends React.Component{
             selectedKey: key
         },()=>console.log(this.state.selectedKey))
     }
+    handleCreate(data){
+        console.log(data)
+    }
     render(){
         const mapToComponents = (data) => {
             data.sort();
