@@ -27,9 +27,12 @@ class App extends Component {
 
   handleIncrement= (value) =>{
     // console.log(`handleIncrement ${value.name}`)
-    const habits = [...this.state.habits]
-    const index = habits.indexOf(value)
-    habits[index].count++
+    const habits = this.state.habits.map(item => {
+      if(item.id === value.id){
+        return {...value,count: value.count+1}
+      }
+      return item
+    })
     this.setState({
       habits:habits
     })
@@ -37,10 +40,13 @@ class App extends Component {
 
   handleDecrement= (value) =>{
     // console.log(`handleDecrement ${value}`)
-    const habits = [...this.state.habits]
-    const index = habits.indexOf(value)
-    const count = habits[index].count-1
-    habits[index].count = count < 0 ? 0 : count
+    const habits = this.state.habits.map(item => {
+      if(item.id === value.id){
+        const count = value.count-1
+        return {...value,count: count < 0? 0: count}
+      }
+      return item
+    })
     this.setState({
       habits:habits
     })
@@ -64,10 +70,16 @@ class App extends Component {
   }
 
   handleRest = () =>{
-    const habits = this.state.habits.map(value =>{
-      value.count = 0
-      return value
-    });
+    // const habits = this.state.habits.map(value =>{
+    //   value.count = 0
+    //   return value
+    // });
+    const habits = this.state.habits.map(item => {
+      if(item.count !== 0){
+        return{...item, count:0}
+      }
+      return item
+    })
     this.setState({habits})
   }
 
