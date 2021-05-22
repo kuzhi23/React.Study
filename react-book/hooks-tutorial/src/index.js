@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Average from "./Components/useMemo/average";
+import UseInfo from "./Components/CustomHooks/useInfo";
 import "./index.css";
 // import App from "./Components/App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Average />
+    <UseInfo />
   </React.StrictMode>,
   document.getElementById("root")
 );
