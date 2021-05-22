@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import UseReducer from "./Components/useReducer_Hooks/useReducer";
-import InPutReducer from "./Components/useReducer_Hooks/inPutReducer";
+import Average from "./Components/useMemo/average";
 import "./index.css";
 // import App from "./Components/App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <UseReducer /> */}
-    <InPutReducer />
+    <Average />
   </React.StrictMode>,
   document.getElementById("root")
 );
